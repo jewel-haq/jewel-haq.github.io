@@ -140,22 +140,38 @@ ul, ol, dl { margin: 0; padding: 0; }
 .name {
   font-size: 1.7rem;
 }
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: -10px;
+}
 .name a { text-decoration: none; color: var(--text); }
 .name a:hover { color: var(--accent); }
 
 .role {
-  font-size: 0.88rem;
-  color: var(--text-soft);
-  margin: -14px 0 0;
-  line-height: 1.55;
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
 }
+
+.affiliation {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
 .locale {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin: -14px 0 0;
+  margin: 2px 0 0;
 }
 
 .status-line {
@@ -424,7 +440,7 @@ main {
   .mark { order: 1; }
   .name { order: 2; font-size: 1.4rem; margin-right: auto; }
   .theme-toggle { order: 3; }
-  .role, .locale, .status-line { display: none; }
+  .identity, .status-line { display: none; }
   .side-nav {
     order: 4;
     flex-direction: row;
