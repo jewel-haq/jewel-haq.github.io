@@ -133,9 +133,26 @@ ul, ol, dl { margin: 0; padding: 0; }
   gap: 22px;
 }
 
-.mark { display: inline-block; width: 34px; color: var(--text); }
-.mark svg { width: 100%; height: auto; display: block; fill: currentColor; }
-.mark svg .mark-accent { fill: var(--accent); }
+.avatar {
+  display: block;
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.02);
+  transition: filter 0.25s ease;
+}
+.avatar:hover img,
+.avatar:focus-visible img { filter: grayscale(0); }
 
 .name {
   font-size: 1.7rem;
@@ -236,6 +253,7 @@ ul, ol, dl { margin: 0; padding: 0; }
 
 .theme-toggle {
   align-self: flex-start;
+  flex-shrink: 0;
   border: 1px solid var(--rule);
   background: var(--bg-raised);
   color: var(--text-soft);
@@ -437,7 +455,8 @@ main {
     align-items: center;
     gap: 14px 20px;
   }
-  .mark { order: 1; }
+  .avatar { order: 1; width: 40px; height: 40px; border-radius: 3px; }
+  .avatar img { filter: grayscale(0); }
   .name { order: 2; font-size: 1.4rem; margin-right: auto; }
   .theme-toggle { order: 3; }
   .identity, .status-line { display: none; }
